@@ -1,3 +1,4 @@
 class Event < ActiveRecord::Base
-  attr_accessible :description, :name
+  attr_accessible :dayof, :description, :name, :user
+
 end
