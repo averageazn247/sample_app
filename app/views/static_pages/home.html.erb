@@ -6,6 +6,12 @@
     
   </h2>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+ <% if signed_in? %>
+ <%= link_to "Create an Event now! ", '/create', class: "btn btn-large btn-primary" %>
+ <% else %>
+  <%= link_to "Sign up now! ", signup_path, class: "btn btn-large btn-primary" %>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <%= link_to "Login!", '/signin', class: "btn btn-large btn-primary" %>
+  <% end %>
 </div>
  
