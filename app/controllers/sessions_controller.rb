@@ -2,6 +2,17 @@ class SessionsController < ApplicationController
   require 'omniauth'
   
   def new
+  end
+  def login
+    @ayth= request.env["omniauth.ath"]
+    @token=@auth["credentials"]["token"]
+    client =Google::APIClient.new
+    client.authorization.access_token=@token
+    service = client.discovered_api('calendar','v3')
+    @result =client.execute(
+    :api_method => service.calendar_list.list,
+    :parameters => {},
+    :headers => {'content-Type'=> 'application/json'})
   end 
   def create
     user = User.find_by_email(params[:session][:email].downcase)
