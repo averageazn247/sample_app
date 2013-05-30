@@ -1,8 +1,7 @@
 SampleApp::Application.routes.draw do
    
 
-  devise_for :users
-
+  
   resources :users
   resources :sessions, only: [:new, :create, :destroy] 
   root to: 'static_pages#home' 
