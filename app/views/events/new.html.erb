@@ -4,8 +4,7 @@
 
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for(@event) do |f| %>
-	  <%= render 'shared/error_messages' %>
+    <%= form_for(@event) do |f| %> 
 
 
 
@@ -17,7 +16,7 @@
       <%= f.hidden_field :user, :value=> :user%>
       
       
-	<%= f.label :dayof%>
+	<%= f.label :date%>
 	<%= f.text_field :dayof%>
  
 
