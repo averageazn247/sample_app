@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
   end
+  
   def create
     @event = Event.new(params[:event])
     if @event.save
@@ -16,5 +17,8 @@ class EventsController < ApplicationController
   
   end
   
-  
+  def index
+      @events = Event.find(:all)
+      @date = params[:month] ? Date.parse(params[:month]) : Date.today
+  end
 end

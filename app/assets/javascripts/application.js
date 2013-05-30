@@ -15,3 +15,7 @@
 //= require bootstrap
 //= require jquery.ui.datepicker
 //= require_tree .
+
+$(function (){
+        $('#event_dayof').datepicker();
+});
