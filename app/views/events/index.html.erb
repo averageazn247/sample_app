@@ -8,11 +8,11 @@
   </h2>
   <% calendar_for @event, :year => @date.year, :month => @date.month do |calendar| %>
     <%= calendar.head('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') %>
-    <% calendar.day(:day_method => :dayof) do |date, articles| %>
+    <% calendar.day(:day_method => :dayof) do |date, events| %>
       <%= date.day %>
       <ul>
-        <% for article in articles %>
-          <li><%= link_to h(event.name), article %></li>
+        <% for event in events %>
+          <li><%= link_to h(event.name), event %></li>
         <% end %>
       </ul>
     <% end %>
